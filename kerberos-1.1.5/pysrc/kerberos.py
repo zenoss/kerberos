@@ -168,12 +168,30 @@ def authGSSClientUnwrap(context, challenge):
     @return: a result code (see above) 
     """ 
 
+def authGSSClientUnwrapIov(context, challenge): 
+    """ 
+    Perform the client side GSSAPI unwrap iov step 
+    
+    @param challenge: a string containing the base64-encoded server data from Windows
+    @return: a result code (see above) 
+    """ 
+
 def authGSSClientWrap(context, data, user=None): 
     """ 
     Perform the client side GSSAPI wrap step.  
     
     @param data:the result of the authGSSClientResponse after the authGSSClientUnwrap 
     @param user: the user to authorize 
+    @return: a result code (see above) 
+    """ 
+
+def authGSSClientWrapIov(context, data, protect): 
+    """ 
+    Perform the client side GSSAPI wrap iov step.  
+    
+    @param data: the b64encoded data to send to Windows
+    @param protect:  specify whether or not to encrypt data.
+    
     @return: a result code (see above) 
     """ 
 
